@@ -6,10 +6,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	  && rm -rf /var/lib/apt/lists/*
 
 ENV TYK_DOWNLOAD_URL https://github.com/TykTechnologies/tyk/releases/download/v2.2/tyk-linux-amd64-2.2.0.0.tar.gz
+ENV TYK_VERSION 2.2.0.0
 
 RUN wget -O tyk.tar.gz $TYK_DOWNLOAD_URL && \
     tar -xzf tyk.tar.gz && \
-    mv tyk.linux.amd64-2.2.0.0 /opt/tyk-gateway && \
+    mv tyk.linux.amd64-$TYK_VERSION /opt/tyk-gateway && \
     mv /opt/tyk-gateway/tyk /bin/tyk && \
     rm tyk.tar.gz && \
     rm -rf /opt/tyk-gateway/apps/* && \
@@ -20,6 +21,7 @@ ENV TYK_SECRET 352d20ee67be67f6340b4c0605b044b7
 ENV REDIS_HOST redis
 ENV REDIS_PORT 6379
 #ENV REDIS_PASSWORD test
+ENV USE_SENTRY false
 
 ENV API_NAME Tyk Test API
 ENV API_ID 1

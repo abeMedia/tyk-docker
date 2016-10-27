@@ -9,6 +9,8 @@ sed -i "s/TYK_SECRET/$TYK_SECRET/g" ./tyk.conf
 sed -i "s/REDIS_HOST/$REDIS_HOST/g" ./tyk.conf
 sed -i "s/REDIS_PORT/$REDIS_PORT/g" ./tyk.conf
 sed -i "s/REDIS_PASSWORD/$REDIS_PASSWORD/g" ./tyk.conf
+sed -i "s/USE_SENTRY/$USE_SENTRY/g" ./tyk.conf
+sed -i "s/SENTRY_DSN/$SENTRY_DSN/g" ./tyk.conf
 
 # set api definition
 sed -i "s/API_NAME/$API_NAME/g" ./apps/app.json
@@ -19,6 +21,21 @@ sed -i "s/AUTH_HEADER_NAME/$AUTH_HEADER_NAME/g" ./apps/app.json
 sed -i "s/AUTH_USE_PARAM/$AUTH_USE_PARAM/g" ./apps/app.json
 sed -i "s#TARGET_URL#$TARGET_URL#g" ./apps/app.json
 sed -i "s/ENABLE_BATCH_REQUESTS/$ENABLE_BATCH_REQUESTS/g" ./apps/app.json
+
+
+if [ ! -z "$API_HEALTHCHECK_URL" ]; then
+  echo '{
+    "name": "Health Check",
+    "api_id": "health-check",
+    "org_id": "'$ORG_ID'",
+    "use_keyless": true,
+    "proxy": {
+        "listen_path": "'$API_HEALTHCHECK_PATH'",
+        "target_url": "'$TARGET_URL'/'$API_HEALTHCHECK_PATH'",
+        "strip_listen_path": true
+    }
+}' > .apps/health.json
+fi
 
 # set policies
 POLICY_TEMPLATE=$(<.docker/policies.json)

@@ -2,10 +2,6 @@
     "name": "API_NAME",
     "api_id": "API_ID",
     "org_id": "ORG_ID",
-    "definition": {
-        "location": "header",
-        "key": "version"
-    },
     "auth": {
         "auth_header_name": "AUTH_HEADER_NAME",
         "use_param": AUTH_USE_PARAM
@@ -17,7 +13,7 @@
             "Default": {
                 "name": "Default",
                 "expires": "3000-01-02 15:04",
-                "use_extended_paths": false,
+                "use_extended_paths": true,
                 "extended_paths": {
                     "ignored": [],
                     "white_list": [],
