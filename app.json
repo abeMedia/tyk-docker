@@ -1,0 +1,35 @@
+{
+    "name": "API_NAME",
+    "api_id": "API_ID",
+    "org_id": "ORG_ID",
+    "definition": {
+        "location": "header",
+        "key": "version"
+    },
+    "auth": {
+        "auth_header_name": "AUTH_HEADER_NAME",
+        "use_param": AUTH_USE_PARAM
+    },
+    "use_keyless": USE_KEYLESS,
+    "version_data": {
+        "not_versioned": true,
+        "versions": {
+            "Default": {
+                "name": "Default",
+                "expires": "3000-01-02 15:04",
+                "use_extended_paths": false,
+                "extended_paths": {
+                    "ignored": [],
+                    "white_list": [],
+                    "black_list": []
+                }
+            }
+        }
+    },
+    "proxy": {
+        "listen_path": "/",
+        "target_url": "TARGET_URL",
+        "strip_listen_path": true
+    },
+    "enable_batch_request_support": ENABLE_BATCH_REQUESTS
+}

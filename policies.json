@@ -1,0 +1,17 @@
+	"POLICY_ID": {
+		"rate": POLICY_RATE,
+		"per": POLICY_PER,
+		"quota_max": POLICY_QUOTA_MAX,
+		"quota_renewal_rate": POLICY_QUOTA_RENEWAL_RATE,
+		"access_rights": {
+			"API_ID": {
+				"api_name": "API_NAME",
+				"api_id": "API_ID",
+				"versions": [
+					"Default"
+				]
+			}
+		},
+		"org_id": "ORG_ID",
+		"hmac_enabled": false
+	}

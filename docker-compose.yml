@@ -1,0 +1,35 @@
+tyk:
+  image: abemedia/tyk:latest
+  restart: always
+  links:
+    - redis:redis
+  ports:
+    - '8080:8080'
+  environment:
+    - TYK_SECRET=123
+    - REDIS_HOST=redis
+    - REDIS_PORT=6379
+#    - REDIS_PASSWORD=your_password
+    - API_NAME=Tyk Test API
+    - API_ID=1
+    - ORG_ID=default
+    - USE_KEYLESS=false
+    - AUTH_USE_PARAM=false
+    - AUTH_HEADER_NAME=authorization
+    - TARGET_URL=http://httpbin.org
+    - ENABLE_BATCH_REQUESTS=true
+    - POLICY_1_ID=default
+    - POLICY_1_RATE=1000
+    - POLICY_1_PER=1
+    - POLICY_1_QUOTA_MAX=100
+    - POLICY_1_QUOTA_RENEWAL_RATE=60
+    - POLICY_2_ID=premium
+    - POLICY_2_RATE=1000
+    - POLICY_2_PER=1
+    - POLICY_2_QUOTA_MAX=10000
+    - POLICY_2_QUOTA_RENEWAL_RATE=60
+redis:
+  image: redis:latest
+  restart: always
+  volumes:
+    - /data
