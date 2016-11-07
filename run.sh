@@ -23,7 +23,7 @@ sed -i "s#TARGET_URL#$TARGET_URL#g" ./apps/app.json
 sed -i "s/ENABLE_BATCH_REQUESTS/$ENABLE_BATCH_REQUESTS/g" ./apps/app.json
 
 
-if [ ! -z "$API_HEALTHCHECK_URL" ]; then
+if [ ! -z "$API_HEALTHCHECK_PATH" ]; then
   echo '{
     "name": "Health Check",
     "api_id": "health-check",
@@ -34,7 +34,7 @@ if [ ! -z "$API_HEALTHCHECK_URL" ]; then
         "target_url": "'$TARGET_URL'/'$API_HEALTHCHECK_PATH'",
         "strip_listen_path": true
     }
-}' > .apps/health.json
+}' > ./apps/health.json
 fi
 
 # set policies
