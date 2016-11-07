@@ -33,6 +33,9 @@ if [ ! -z "$API_HEALTHCHECK_PATH" ]; then
         "listen_path": "'$API_HEALTHCHECK_PATH'",
         "target_url": "'$TARGET_URL'/'$API_HEALTHCHECK_PATH'",
         "strip_listen_path": true
+    },
+    "version_data": {
+        "not_versioned": true
     }
 }' > ./apps/health.json
 fi
