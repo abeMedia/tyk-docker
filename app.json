@@ -27,5 +27,8 @@
         "target_url": "TARGET_URL",
         "strip_listen_path": true
     },
-    "enable_batch_request_support": ENABLE_BATCH_REQUESTS
+    "enable_batch_request_support": ENABLE_BATCH_REQUESTS,
+    "CORS": {
+        "enable": true
+    }
 }
