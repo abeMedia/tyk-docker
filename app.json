@@ -32,6 +32,7 @@
         "enable": true,
         "allowed_origins": [
             "*"
-        ]
+        ],
+        "options_pasthrough": true
     }
 }
