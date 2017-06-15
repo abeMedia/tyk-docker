@@ -29,6 +29,9 @@
     },
     "enable_batch_request_support": ENABLE_BATCH_REQUESTS,
     "CORS": {
-        "enable": true
+        "enable": true,
+        "allowed_origins": [
+            "*"
+        ]
     }
 }
