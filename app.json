@@ -30,9 +30,6 @@
     "enable_batch_request_support": ENABLE_BATCH_REQUESTS,
     "CORS": {
         "enable": true,
-        "allowed_origins": [
-            "*"
-        ],
         "allowed_methods": [
             "GET",
             "POST",
