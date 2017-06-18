@@ -31,7 +31,6 @@
     "CORS": {
         "enable": true,
         "allowed_headers": [
-            "Accept",
             "Authorization"
         ]
     }
