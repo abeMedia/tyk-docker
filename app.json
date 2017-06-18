@@ -32,6 +32,11 @@
         "enable": true,
         "allowed_origins": [
             "*"
+        ],
+        "allowed_methods": [
+            "GET",
+            "POST",
+            "HEAD"
         ]
     }
 }
