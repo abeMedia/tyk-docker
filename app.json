@@ -37,6 +37,10 @@
             "GET",
             "POST",
             "HEAD"
+        ],
+        "allowed_headers": [
+            "Accept",
+            "Authorization"
         ]
     }
 }
